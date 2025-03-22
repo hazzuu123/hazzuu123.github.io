@@ -88,7 +88,9 @@ button,
 
 /* Enhance the profile image hover effect */
 .profile-image {
-  transition: transform 0.5s ease, filter 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
 }
 
 .profile-image:hover {
@@ -97,8 +99,8 @@ button,
 }
 
 .profile-cutout {
-  -webkit-mask-image: url("/profile-mask.png");
-  mask-image: url("/profile-mask.png");
+  -webkit-mask-image: url("/profile.png");
+  mask-image: url("/profile.png");
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -114,7 +116,9 @@ button,
 
 .skill-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Enhance section titles */
@@ -132,4 +136,3 @@ button,
   height: 3px;
   background: linear-gradient(to right, hsl(43, 96%, 56%), transparent);
 }
-

@@ -1,60 +1,60 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
-  Github,
-  ExternalLink,
-  Code,
-  Server,
-  Globe,
-  ChevronDown,
-  Mail,
-  BookOpen,
-  User,
-  Calendar,
-  Phone,
   AtSign,
+  BookOpen,
+  Calendar,
+  ChevronDown,
+  Code,
+  ExternalLink,
+  Github,
+  Globe,
   GraduationCap,
-} from "lucide-react"
-import { useState, useEffect } from "react"
+  Mail,
+  Phone,
+  Server,
+  User,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
-  const [activeSection, setActiveSection] = useState("hero")
+  const [activeSection, setActiveSection] = useState("hero");
 
   // Track scroll position to update active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "skills", "projects", "thank-you"]
-      const currentPosition = window.scrollY + 300
+      const sections = ["hero", "about", "skills", "projects", "thank-you"];
+      const currentPosition = window.scrollY + 300;
 
       for (const section of sections) {
-        const element = document.getElementById(section)
-        if (!element) continue
+        const element = document.getElementById(section);
+        if (!element) continue;
 
-        const offsetTop = element.offsetTop
-        const offsetHeight = element.offsetHeight
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
 
         if (currentPosition >= offsetTop && currentPosition < offsetTop + offsetHeight) {
-          setActiveSection(section)
-          break
+          setActiveSection(section);
+          break;
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -137,7 +137,7 @@ export default function HomePage() {
           id="hero"
           className="w-full min-h-screen flex flex-col justify-center relative bg-gradient-to-b from-amber-50 to-white overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[url('/warm-pattern.png')] opacity-5 z-0"></div>
+          <div className="absolute inset-0 bg-[url('/profile.png')] opacity-5 z-0"></div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center text-center md:text-left md:items-start">
               <div className="relative w-full">
@@ -607,7 +607,7 @@ export default function HomePage() {
           id="thank-you"
           className="w-full min-h-screen flex flex-col justify-center relative bg-gradient-to-t from-amber-50 to-white overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[url('/warm-pattern.png')] opacity-5 z-0"></div>
+          <div className="absolute inset-0 bg-[url('/profile.png')] opacity-5 z-0"></div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center text-center">
               <div className="relative w-full max-w-3xl mx-auto">
@@ -683,6 +683,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
